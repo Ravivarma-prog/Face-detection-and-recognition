@@ -3,22 +3,6 @@ import os
 import numpy as np
 import face_detection as fr
 
-#lets load the image
-# test_img=cv2.imread('E:/python_programs/face detection/test/SAVE_20200112_123817.jpg') #loading the image
-# faces_detected,gray_img=fr.faceDetection(test_img) #returns the rectangular face and the gray image
-# print("faces_detected:",faces_detected)
- 
-# #to draw the rectangle
-# for(x,y,w,h) in  faces_detected:
-#     cv2.rectangle(test_img,(x,y),(x+w,y+h),(0,0,255)) # draw the ractangle with the diagonals given
-
-# #resize the image inorder to fit the rectangle
-
-# resized_img=cv2.resize(test_img,(1000,700)) # resizes te image to 1000X700
-# cv2.imshow("face_detected:",resized_img)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
-
 faces,faceID=fr.labels_for_training_data('E:/python_programs/face detection/training')
 face_recognizer=fr.train_classifier(faces,faceID)
 face_recognizer.save('trainingData.yml')
